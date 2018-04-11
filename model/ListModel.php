@@ -30,3 +30,19 @@ function createList() {
 
 	return true;
 }
+
+function deleteList($id = null)
+{
+	if (!$id) {
+		return false;
+	}
+
+	$db = openDatabaseConnection();
+	$sql = "DELETE FROM list WHERE list_id=:id";
+	$query = $db->prepare($sql);
+	$query->execute(array(
+		':id' => $id));
+	$db = null;
+
+	return true;
+}

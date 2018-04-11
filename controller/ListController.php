@@ -22,3 +22,12 @@ function createSave()
 	}
 	header("Location:" . URL . "home/index");
 }
+
+function delete($id)
+{
+	if (!deleteList($id)) {
+		header("Location:" . URL . "error/index");
+		exit();
+	}
+	header("Location:" . URL . "home/index");
+}
