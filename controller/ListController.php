@@ -2,6 +2,13 @@
 
 require(ROOT . "model/ListModel.php");
 
+function index()
+{
+	render("home/index", array(
+		'list' => getAllLists()
+	));
+}
+
 function create()
 {
 	render("list/create");

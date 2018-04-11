@@ -3,5 +3,7 @@
 require(ROOT . "model/ListModel.php");
 
 function index() {
-	render("home/index");
+	render("home/index", array(
+		'lists' => getAllLists()
+	));
 }
