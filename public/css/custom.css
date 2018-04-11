@@ -1,0 +1,97 @@
+body {
+  overflow: auto;
+  white-space: nowrap;
+}
+
+a {
+  text-decoration: none;
+  color: #000000;
+}
+
+a:hover {
+  text-decoration: underline;
+  color: blue;
+}
+
+.list {
+  width: 250px;
+  background-color: #efefef;
+  display: inline-block;
+  border: 1px solid black;
+  vertical-align: top;
+}
+
+.list-name {
+  word-wrap: normal;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  padding: 5px 0;
+  text-align: center;
+  font-size: large;
+}
+
+.task-items {
+  margin: 4px 4px;
+  padding: 0 4px;
+}
+
+.task {
+  position: relative;
+  background-color: #ffffff;
+}
+
+.task-description {
+  padding: 5px 3px;
+  margin: 5px 0;
+}
+
+.task-description span {
+  display: inline-block;
+  max-width: 100px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.status {
+  position: absolute;
+  right: 88px;
+}
+
+.task-menu {
+  position: absolute;
+  right: 5px;
+}
+
+.sort, .options {
+  margin: 0 8px;
+}
+
+#add-task {
+  display: inline-block;
+  width: 100%;
+  cursor: pointer;
+  background-color: #ccc;
+  text-decoration: none;
+  color: #000;
+  padding: 3px 0;
+  margin-bottom: 5px;
+}
+
+.sort > :last-child {
+  margin-left: 64px;
+}
+
+#add-list {
+  display: inline-block;
+  width: 250px;
+  cursor: pointer;
+  background-color: #efefef;
+  text-decoration: none;
+  color: #000;
+  padding: 7px;
+}
+
+#add-list:hover, #add-task:hover {
+  background-color: #999;
+}
