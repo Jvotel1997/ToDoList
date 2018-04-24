@@ -36,7 +36,6 @@ function createList() {
 	$query = $db->prepare($sql);
 	$query->execute(array(
 		':name' => $listname));
-
 	$db = null;
 
 	return true;

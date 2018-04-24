@@ -5,7 +5,7 @@ require(ROOT . "model/TaskModel.php");
 function index()
 {
 	render("home/index", array(
-		'task' => getAllTasks()
+		'task' => getAllTasksFromList()
 	));
 }
 

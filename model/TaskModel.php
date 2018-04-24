@@ -14,7 +14,9 @@ function getTask($id)
 function getAllTasksFromList($list_id) {
 	$db = openDatabaseConnection();
 
-	$sql = "SELECT * FROM task WHERE list_id = :listId ";
+	$sql = "SELECT task_id, task_description, task.status_id, status_name FROM task
+	INNER JOIN status ON task.status_id = status.status_id
+	WHERE list_id = :listId ";
 	$query = $db->prepare($sql);
 	$query->execute(array(
 		':listId' => $list_id
@@ -27,20 +29,18 @@ function getAllTasksFromList($list_id) {
 
 function createTask() {
 	$description = isset($_POST['task_description']) ? $_POST['task_description'] : null;
-	$status = isset($_POST['status']) ? $_POST['status'] : null;
 	$listId = isset($_POST['list_id']) ? $_POST['list_id'] : null;
 
-	if (strlen($description) == 0 | strlen($listId) == 0 | strlen($status) == 0) {
+	if (strlen($description) == 0 | strlen($listId) == 0) {
 		return false;
 	}
 
 	$db = openDatabaseConnection();
 
-	$sql = "INSERT INTO task(task_description, status, list_id) VALUES (:name, :status, :listId)";
+	$sql = "INSERT INTO task(task_description, list_id) VALUES (:name, :listId)";
 	$query = $db->prepare($sql);
 	$query->execute(array(
 		':name' => $description,
-		':status' => $status,
 		':listId' => $listId
 	));
 
