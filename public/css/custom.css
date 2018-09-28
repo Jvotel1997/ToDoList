@@ -40,6 +40,10 @@ a:hover {
   background-color: #ffffff;
 }
 
+.task.hidden {
+  display:none;
+}
+
 .task-description {
   padding: 5px 3px;
   margin: 5px 0;
@@ -65,6 +69,18 @@ a:hover {
 
 .sort, .options {
   margin: 0 8px;
+}
+
+.sort-status {
+  user-select: none;
+}
+
+.sort-status:hover {
+    cursor: pointer;
+}
+
+#filter {
+  display: inline-block;
 }
 
 #add-task {
